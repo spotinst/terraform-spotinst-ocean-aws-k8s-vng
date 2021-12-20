@@ -1,47 +1,59 @@
 provider "spotinst" {
-  token = "redacted"
+  token   = "redacted"
   account = "redacted"
 }
 
+module "ocean-aws-k8s" {
+  ...
+}
+
 ## Create Ocean Virtual Node Group (launchspec) ##
-module "ocean_eks_launchspec_stateless" {
-  source = "../"
+module "ocean-aws-k8s-vng_stateless" {
+  source = "spotinst/ocean-aws-k8s-vng/spotinst"
 
-  cluster_name  = var.cluster_name
-  ocean_id      = module.k8s-ocean.ocean_id
+  # Spot.io Credentials
+  spotinst_token              = "redacted"
+  spotinst_account            = "redacted"
 
-  # Name of VNG in Ocean
-  name = "stateless"
-  # Add Labels or taints
+  cluster_name = "cluster_name"
+  ocean_id = module.ocean-aws-k8s.ocean_id
+
+  name = "stateless" # Name of VNG in Ocean
+  #ami_id = "" # Can change the AMI
+
   labels = [{key="type",value="stateless"}]
   #taints = [{key="type",value="stateless",effect="NoSchedule"}]
-  tags = {CreatedBy = "terraform"}
+
+  tags = {CreatedBy = "terraform"} #Addition Tags
 }
 
 ## Create additional Ocean Virtual Node Group (launchspec) ##
-module "ocean_eks_launchspec_gpu" {
-  source = "../"
+module "ocean-aws-k8s-vng_gpu" {
+  source = "spotinst/ocean-aws-k8s-vng/spotinst"
+  # Spot.io Credentials
+  spotinst_token              = "redacted"
+  spotinst_account            = "redacted"
 
-  cluster_name  = var.cluster_name
-  ocean_id      = module.k8s-ocean.ocean_id
+  cluster_name = "cluster_name"
+  ocean_id = module.ocean-aws-k8s.ocean_id
 
-  # Name of VNG in Ocean
-  name = "gpu"
+  name = "gpu"  # Name of VNG in Ocean
+  #ami_id = "" # Can chang  # Add Labels or taints
 
-  # Add Labels or taints
   labels = [{key="type",value="gpu"}]
   taints = [{key="type",value="gpu",effect="NoSchedule"}]
-  # Limit VNG to specific instance types
-  #instance_types = ["g4dn.xlarge","g4dn.2xlarge"]
 
-  # Change the spot %
-  #spot_percentage = 50
+  #instance_types = ["g4dn.xlarge","g4dn.2xlarge"] # Limit VNG to specific instance types
+  spot_percentage = 50 # Change the spot %
 }
 
-## Outputs ##
-output "virtual_node_group_gpu_id" {
-  value = module.ocean_eks_launchspec_gpu.virtual_node_group_id
-}
-output "virtual_node_group_stateless_id" {
-  value = module.ocean_eks_launchspec_stateless.virtual_node_group_id
+module "ocean-controller" {
+  source = "spotinst/ocean-controller/spotinst"
+
+  # Credentials.
+  spotinst_token   = "redacted"
+  spotinst_account = "redacted"
+
+  # Configuration.
+  cluster_identifier = "cluster_name"
 }

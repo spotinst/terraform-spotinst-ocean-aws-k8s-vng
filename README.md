@@ -11,20 +11,20 @@ provider "spotinst" {
   account = "redacted"
 }
 
-module "k8s-ocean" {
+module "ocean-aws-k8s" {
   ...
 }
 
 ## Create Ocean Virtual Node Group (launchspec) ##
-module "ocean_eks_launchspec_stateless" {
-  source = "stevenfeltner/k8s-ocean-launchspec/spotinst"
+module "ocean-aws-k8s-vng_stateless" {
+  source = "spotinst/ocean-aws-k8s-vng/spotinst"
 
   # Spot.io Credentials
   spotinst_token              = "redacted"
   spotinst_account            = "redacted"
 
   cluster_name = local.cluster_name
-  ocean_id = module.k8s-ocean.ocean_id
+  ocean_id = module.ocean-aws-k8s.ocean_id
   
   name = "stateless" # Name of VNG in Ocean
   #ami_id = "" # Can change the AMI
@@ -36,14 +36,14 @@ module "ocean_eks_launchspec_stateless" {
 }
 
 ## Create additional Ocean Virtual Node Group (launchspec) ##
-module "ocean_eks_launchspec_gpu" {
-  source = "stevenfeltner/k8s-ocean-launchspec/spotinst"
+module "ocean-aws-k8s-vng_gpu" {
+  source = "spotinst/ocean-aws-k8s-vng/spotinst"
   # Spot.io Credentials
   spotinst_token              = "redacted"
   spotinst_account            = "redacted"
 
   cluster_name = local.cluster_name
-  ocean_id = module.k8s-ocean.ocean_id
+  ocean_id = module.ocean-aws-k8s.ocean_id
   
   name = "gpu"  # Name of VNG in Ocean
   #ami_id = "" # Can chang  # Add Labels or taints
@@ -66,7 +66,7 @@ module "ocean-controller" {
   cluster_identifier = var.cluster_name
 }
 ```
-~> You must configure the `spotinst_ocean_aws` resource. Ensure `spotinst_ocean_aws` resource (defined in `k8s-ocean` module) is defined before this module as the `ocean_id` is needed. 
+~> You must configure the `spotinst_ocean_aws` resource. Ensure `spotinst_ocean_aws` resource (defined in `ocean-aws-k8s` module) is defined before this module as the `ocean_id` is needed. 
 
 ## Providers
 
@@ -75,9 +75,9 @@ module "ocean-controller" {
 | spotinst/spotinst | >= 1.60.0 |
 
 ## Modules
-* `k8s-ocean` - Creates Ocean Cluster [Doc](https://registry.terraform.io/modules/stevenfeltner/k8s-ocean/spotinst/latest)
+* `ocean-aws-k8s` - Creates Ocean Cluster [Doc](https://registry.terraform.io/modules/spotinst/ocean-aws-k8s/spotinst/latest)
 * `ocean-controller` - Create and installs spot ocean controller pod [Doc](https://registry.terraform.io/modules/spotinst/ocean-controller/spotinst/latest)
-* `k8s-ocean-launchspec` - (Optional) Add custom virtual node groups [Doc](https://registry.terraform.io/modules/stevenfeltner/k8s-ocean-launchspec/spotinst/latest)
+* `ocean-aws-k8s-vng` - (Optional) Add custom virtual node groups [Doc](https://registry.terraform.io/modules/spotinst/ocean-aws-k8s-vng/spotinst/latest)
 
 ## Documentation
 
