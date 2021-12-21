@@ -10,7 +10,7 @@ module "ocean-aws-k8s" {
 
 ## Create Ocean Virtual Node Group (launchspec) ##
 module "ocean-aws-k8s-vng_stateless" {
-  source = "spotinst/ocean-aws-k8s-vng/spotinst"
+  source = "../"
 
   # Spot.io Credentials
   spotinst_token              = "redacted"
@@ -30,7 +30,7 @@ module "ocean-aws-k8s-vng_stateless" {
 
 ## Create additional Ocean Virtual Node Group (launchspec) ##
 module "ocean-aws-k8s-vng_gpu" {
-  source = "spotinst/ocean-aws-k8s-vng/spotinst"
+  source = "../"
   # Spot.io Credentials
   spotinst_token              = "redacted"
   spotinst_account            = "redacted"
