@@ -1,4 +1,4 @@
-# terraform-spotinst-k8s-ocean-launchspec
+# Spot Ocean k8s Virtual Node Group Terraform Module
 
 Spotinst Terraform Module to integrate existing k8s node groups with Ocean launchspec/Virtual Node group (VNG)
 
@@ -72,7 +72,7 @@ module "ocean-controller" {
 
 | Name | Version |
 |------|---------|
-| spotinst/spotinst | >= 1.60.0 |
+| spotinst/spotinst | >= 1.64.1 |
 
 ## Modules
 * `ocean-aws-k8s` - Creates Ocean Cluster [Doc](https://registry.terraform.io/modules/spotinst/ocean-aws-k8s/spotinst/latest)

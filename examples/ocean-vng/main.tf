@@ -4,6 +4,7 @@ provider "spotinst" {
 }
 
 module "ocean-aws-k8s" {
+  source  = "spotinst/ocean-aws-k8s/spotinst"
   ...
 }
 

@@ -9,8 +9,6 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   subnet_ids                  = var.subnet_ids
   instance_types              = var.instance_types
   preferred_spot_types        = var.preferred_spot_types
-  #root_volume_size            = var.root_volume_size
-
 
   # Required tags
   tags {
@@ -76,14 +74,12 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
       kms_key_id                = var.kms_key_id
       snapshot_id               = var.snapshot_id
       volume_type               = var.volume_type
-      //volume_size             = var.volume_size
       throughput                = var.throughput
       dynamic_volume_size {
         base_size               = var.base_size
         resource                = var.resource
         size_per_resource_unit  = var.size_per_resource_unit
       }
-      //no_device                 = var.no_device
     }
   }
 
