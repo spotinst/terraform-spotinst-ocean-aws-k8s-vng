@@ -6,4 +6,5 @@
 # the repo. Unless a later match takes precedence,
 # "frontend-code-reviewers" team members will be requested for
 # review when someone opens a pull request.
-*       @spotinst/sig-reviewers-frontend
+*                 @spotinst/sig-reviewers
+gradle.properties @spotinst/sig-developers
