@@ -11,7 +11,7 @@ variable "name" {
   type        = string
   description = "Name for nodegroup (VNG)"
 }
-
+###################
 
 ## Optional VNG Configurations
 variable "user_data" {
@@ -95,7 +95,7 @@ variable "tags" {
   default = null
   description = "Tags to be added to resources"
 }
-
+###################
 
 ## Block Device Mappings ##
 variable "device_name" {
@@ -199,23 +199,23 @@ variable "initial_nodes" {
 }
 ##################
 
+## preferred_spot_types ##
 variable "preferred_spot_types" {
   type        = list(string)
   default     = null
   description = "A list of instance types. Takes the preferred types into consideration while maintaining a variety of machine types running for optimized distribution."
 }
-variable "elastic_ip_pool_tag_selector_key" {
-  type        = string
+###################
+
+## elastic_ip_pool ##
+variable "elastic_ip_pool_tag_selector" {
+  type        = map(string)
   default     = null
   description = "Elastic IP tag key. The Virtual Node Group will consider all Elastic IPs tagged with this tag as a part of the Elastic IP pool to use."
 }
-variable "elastic_ip_pool_tag_selector_value" {
-  type        = string
-  default     = null
-  description = "Elastic IP tag value."
-}
 variable "force_delete" {
   type        = bool
-  default     = null
+  default     = false
   description = "When set to true, delete even if it is the last Virtual Node Group (also, the default Virtual Node Group must be configured with useAsTemlateOnly = true). Should be set at creation or update, but will be used only at deletion."
 }
+###################
