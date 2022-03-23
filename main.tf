@@ -59,11 +59,15 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
 
   ## Elastic_ip_pool
   elastic_ip_pool {
-    tag_selector {
-      tag_key   = var.elastic_ip_pool_tag_selector_key
-      tag_value = var.elastic_ip_pool_tag_selector_value
+    dynamic tag_selector {
+      for_each = var.elastic_ip_pool_tag_selector == null ? {} : var.elastic_ip_pool_tag_selector
+      content {
+        tag_key = tag_selector.key
+        tag_value = tag_selector.value
+      }
     }
   }
+
   ## Block Device Mappings ##
   block_device_mappings {
     device_name                 = var.device_name
