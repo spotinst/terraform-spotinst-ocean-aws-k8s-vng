@@ -69,20 +69,28 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   }
 
   ## Block Device Mappings ##
-  block_device_mappings {
-    device_name                 = var.device_name
-    ebs {
-      delete_on_termination     = var.delete_on_termination
-      encrypted                 = var.encrypted
-      iops                      = var.iops
-      kms_key_id                = var.kms_key_id
-      snapshot_id               = var.snapshot_id
-      volume_type               = var.volume_type
-      throughput                = var.throughput
-      dynamic_volume_size {
-        base_size               = var.base_size
-        resource                = var.resource
-        size_per_resource_unit  = var.size_per_resource_unit
+  dynamic "block_device_mappings" {
+    for_each = var.block_device_mappings != null ? [var.block_device_mappings] : []
+    content {
+      device_name = block_device_mappings.value.device_name
+      no_device                   = block_device_mappings.value.no_device
+      ebs {
+        delete_on_termination       = block_device_mappings.value.delete_on_termination
+        encrypted                   = block_device_mappings.value.encrypted
+        iops                        = block_device_mappings.value.iops
+        kms_key_id                  = block_device_mappings.value.kms_key_id
+        snapshot_id                 = block_device_mappings.value.snapshot_id
+        volume_type                 = block_device_mappings.value.volume_type
+        volume_size                 = block_device_mappings.value.volume_size
+        throughput                  = block_device_mappings.value.throughput
+        dynamic dynamic_volume_size {
+          for_each = var.dynamic_volume_size != null ? [var.dynamic_volume_size] : []
+          content {
+            base_size               = dynamic_volume_size.value.base_size
+            resource                = dynamic_volume_size.value.resource
+            size_per_resource_unit  = dynamic_volume_size.value.size_per_resource_unit
+          }
+        }
       }
     }
   }
