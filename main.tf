@@ -1,4 +1,5 @@
 ## Create Virtual Node group (Launch Spec)
+
 resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   ocean_id                    = var.ocean_id
   name                        = var.name
@@ -9,6 +10,8 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   subnet_ids                  = var.subnet_ids
   instance_types              = var.instance_types
   preferred_spot_types        = var.preferred_spot_types
+  root_volume_size            = var.block_device_mappings == null ? var.root_volume_size : null
+
 
   # Required tags
   tags {
@@ -51,9 +54,9 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   dynamic taints {
     for_each = var.taints == null ? [] : var.taints
     content {
-      key = taints.value["key"]
-      value = taints.value["value"]
-      effect = taints.value["effect"]
+      key     = taints.value["key"]
+      value   = taints.value["value"]
+      effect  = taints.value["effect"]
     }
   }
 
@@ -62,7 +65,7 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     dynamic tag_selector {
       for_each = var.elastic_ip_pool_tag_selector == null ? {} : var.elastic_ip_pool_tag_selector
       content {
-        tag_key = tag_selector.key
+        tag_key   = tag_selector.key
         tag_value = tag_selector.value
       }
     }
@@ -72,8 +75,8 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   dynamic "block_device_mappings" {
     for_each = var.block_device_mappings != null ? [var.block_device_mappings] : []
     content {
-      device_name = block_device_mappings.value.device_name
-      no_device                   = block_device_mappings.value.no_device
+      device_name                   = block_device_mappings.value.device_name
+      no_device                     = block_device_mappings.value.no_device
       ebs {
         delete_on_termination       = block_device_mappings.value.delete_on_termination
         encrypted                   = block_device_mappings.value.encrypted
@@ -93,6 +96,10 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
         }
       }
     }
+  }
+
+  autoscale_headrooms_automatic {
+    auto_headroom_percentage    = var.auto_headroom_percentage
   }
 
   autoscale_headrooms {

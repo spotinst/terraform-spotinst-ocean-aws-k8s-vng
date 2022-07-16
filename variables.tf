@@ -125,6 +125,12 @@ variable "dynamic_volume_size" {
 }
 ##################
 
+variable "auto_headroom_percentage" {
+  type    = number
+  default = null
+  description = "Number between 0-200 to control the headroom % of the specific Virtual Node Group. Effective when cluster.autoScaler.headroom.automatic.is_enabled = true is set on the Ocean cluster."
+}
+
 ## Headroom ##
 variable "cpu_per_unit" {
   type        = number
@@ -151,7 +157,7 @@ variable "num_of_units" {
 ## Create Actions ##
 variable "initial_nodes" {
   type        = number
-  default     = 0
+  default     = null
   description = "When set to an integer greater than 0, a corresponding amount of nodes will be launched from the created virtual node group."
 }
 ##################
