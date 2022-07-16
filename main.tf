@@ -1,5 +1,4 @@
 ## Create Virtual Node group (Launch Spec)
-
 resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   ocean_id                    = var.ocean_id
   name                        = var.name
@@ -147,6 +146,13 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     content {
       time_windows      = scheduling_shutdown_hours.value.time_windows
       is_enabled        = scheduling_shutdown_hours.value.is_enabled
+    }
+  }
+
+  update_policy {
+    should_roll             = var.should_roll
+    roll_config {
+      batch_size_percentage = var.batch_size_percentage
     }
   }
 }

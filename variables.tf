@@ -216,3 +216,16 @@ variable "scheduling_shutdown_hours" {
   description 			= "scheduling_shutdown_hours Object"
 }
 ##################
+
+## update_policy ##
+variable "should_roll" {
+  type        = bool
+  default     = false
+  description = "Enables the roll."
+}
+variable "batch_size_percentage" {
+  default     = "20"
+  type        = number
+  description = "Sets the percentage of the instances to deploy in each batch."
+}
+##################
