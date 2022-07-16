@@ -6,9 +6,5 @@ terraform {
       source  = "spotinst/spotinst"
       version = ">= 1.64.1"
     }
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 3.70.0"
-    }
   }
 }
