@@ -18,10 +18,15 @@ variable "user_data" {
   type        = string
   default     = null
 }
-variable "worker_instance_profile_arn" {
+variable "image_id" {
   type        = string
   default     = null
-  description = "Instance Profile ARN to assign to worker nodes. Should have the WorkerNode policy"
+  description = "ID of the image used to launch the instances."
+}
+variable "iam_instance_profile" {
+  type        = string
+  default     = null
+  description = "The ARN or name of an IAM instance profile to associate with launched instances"
 }
 variable "security_groups" {
   type        = list(string)
@@ -33,30 +38,25 @@ variable "subnet_ids" {
   default     = null
   description = "List of subnets"
 }
-variable "ami_id" {
-  type        = string
-  default     = null
-  description = "ami id"
-}
-variable "max_instance_count" {
-  type        = number
-  default     = null
-  description = "(Optional) Set a maximum number of instances per Virtual Node Group. Can be null. If set, value must be greater than or equal to 0."
-}
-variable "min_instance_count" {
-  type        = number
-  default     = null
-  description = "(Optional) Set a minimum number of instances per Virtual Node Group. Can be null. If set, value must be greater than or equal to 0."
-}
 variable "instance_types" {
   type        = list(string)
   default     = null
   description = "Specific instance types permitted by this VNG. For example, [\"m5.large\",\"m5.xlarge\"]"
 }
+variable "preferred_spot_types" {
+  type        = list(string)
+  default     = null
+  description = "A list of instance types. Takes the preferred types into consideration while maintaining a variety of machine types running for optimized distribution."
+}
 variable "root_volume_size" {
   type        = number
   default     = 30
   description = "Size of root volume"
+}
+variable "tags" {
+  type = map(string)
+  default = null
+  description = "Tags to be added to resources"
 }
 variable "associate_public_ip_address" {
   type        = bool
@@ -67,11 +67,6 @@ variable "restrict_scale_down" {
   type        = bool
   default     = null
   description = "When set to True, nodes will be treated as if all pods running have the restrict-scale-down label. Therefore, Ocean will not scale nodes down unless empty."
-}
-variable "spot_percentage" {
-  type        = number
-  default     = 100
-  description = "Percentage of VNG that will run on EC2 Spot instances and remaining will run on-demand"
 }
 variable "labels" {
   type = list(object({
@@ -90,10 +85,12 @@ variable "taints" {
   default = null
   description = "taints / toleration"
 }
-variable "tags" {
-  type = map(string)
-  default = null
-  description = "Tags to be added to resources"
+
+## elastic_ip_pool ##
+variable "elastic_ip_pool_tag_selector" {
+  type        = map(string)
+  default     = null
+  description = "Elastic IP tag key. The Virtual Node Group will consider all Elastic IPs tagged with this tag as a part of the Elastic IP pool to use."
 }
 ###################
 
@@ -125,36 +122,59 @@ variable "dynamic_volume_size" {
 }
 ##################
 
+## autoscale_headrooms_automatic ##
 variable "auto_headroom_percentage" {
   type    = number
   default = null
   description = "Number between 0-200 to control the headroom % of the specific Virtual Node Group. Effective when cluster.autoScaler.headroom.automatic.is_enabled = true is set on the Ocean cluster."
 }
+##################
 
-## Headroom ##
+## autoscale_headrooms ##
+variable "num_of_units" {
+  type        = number
+  default     = 0
+  description = "The number of units to retain as headroom, where each unit has the defined headroom CPU, memory and GPU."
+}
 variable "cpu_per_unit" {
   type        = number
   default     = null
   description = "Optionally configure the number of CPUs to allocate for each headroom unit. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU."
-}
-variable "memory_per_unit" {
-  type        = number
-  default     = null
-  description = "Optionally configure the amount of memory (MiB) to allocate for each headroom unit."
 }
 variable "gpu_per_unit" {
   type        = number
   default     = null
   description = "Optionally configure the number of GPUS to allocate for each headroom unit."
 }
-variable "num_of_units" {
+variable "memory_per_unit" {
   type        = number
-  default     = 0
-  description = "The number of units to retain as headroom, where each unit has the defined headroom CPU, memory and GPU."
+  default     = null
+  description = "Optionally configure the amount of memory (MiB) to allocate for each headroom unit."
 }
 ##################
 
-## Create Actions ##
+## resource_limits ##
+variable "max_instance_count" {
+  type        = number
+  default     = null
+  description = "(Optional) Set a maximum number of instances per Virtual Node Group. Can be null. If set, value must be greater than or equal to 0."
+}
+variable "min_instance_count" {
+  type        = number
+  default     = null
+  description = "(Optional) Set a minimum number of instances per Virtual Node Group. Can be null. If set, value must be greater than or equal to 0."
+}
+##################
+
+## strategy ##
+variable "spot_percentage" {
+  type        = number
+  default     = 100
+  description = "Percentage of VNG that will run on EC2 Spot instances and remaining will run on-demand"
+}
+###################
+
+## create_options ##
 variable "initial_nodes" {
   type        = number
   default     = null
@@ -162,23 +182,37 @@ variable "initial_nodes" {
 }
 ##################
 
-## preferred_spot_types ##
-variable "preferred_spot_types" {
-  type        = list(string)
-  default     = null
-  description = "A list of instance types. Takes the preferred types into consideration while maintaining a variety of machine types running for optimized distribution."
-}
-###################
-
-## elastic_ip_pool ##
-variable "elastic_ip_pool_tag_selector" {
-  type        = map(string)
-  default     = null
-  description = "Elastic IP tag key. The Virtual Node Group will consider all Elastic IPs tagged with this tag as a part of the Elastic IP pool to use."
-}
+## delete_options ##
 variable "force_delete" {
   type        = bool
   default     = false
   description = "When set to true, delete even if it is the last Virtual Node Group (also, the default Virtual Node Group must be configured with useAsTemlateOnly = true). Should be set at creation or update, but will be used only at deletion."
 }
-###################
+##################
+
+## scheduling_shutdown_hours.tf ##
+variable "scheduling_task" {
+  type 					= list(object({
+    is_enabled			= bool
+    cron_expression 	= string
+    task_type 			= string
+    num_of_units 		= number
+    cpu_per_unit 		= number
+    gpu_per_unit		= number
+    memory_per_unit		= number
+  }))
+  default 				= null
+  description 			= "scheduling_task Object"
+}
+##################
+
+## scheduling_tasks.tf ##
+variable "scheduling_shutdown_hours" {
+  type 					= object({
+    time_windows		= list(string)
+    is_enabled 	        = bool
+  })
+  default 				= null
+  description 			= "scheduling_shutdown_hours Object"
+}
+##################

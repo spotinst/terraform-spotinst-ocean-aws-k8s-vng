@@ -4,8 +4,8 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   ocean_id                    = var.ocean_id
   name                        = var.name
   user_data                   = var.user_data
-  image_id                    = var.ami_id
-  iam_instance_profile        = var.worker_instance_profile_arn
+  image_id                    = var.image_id
+  iam_instance_profile        = var.iam_instance_profile
   security_groups             = var.security_groups
   subnet_ids                  = var.subnet_ids
   instance_types              = var.instance_types
@@ -124,5 +124,29 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
 
   delete_options {
     force_delete                = var.force_delete
+  }
+
+
+  dynamic "scheduling_task" {
+    for_each = var.scheduling_task != null ? var.scheduling_task : []
+    content {
+      is_enabled        = scheduling_task.value.is_enabled
+      cron_expression   = scheduling_task.value.cron_expression
+      task_type         = scheduling_task.value.task_type
+      task_headroom {
+        num_of_units    = scheduling_task.value.num_of_units
+        cpu_per_unit    = scheduling_task.value.cpu_per_unit
+        gpu_per_unit    = scheduling_task.value.gpu_per_unit
+        memory_per_unit = scheduling_task.value.memory_per_unit
+      }
+    }
+  }
+
+  dynamic "scheduling_shutdown_hours" {
+    for_each = var.scheduling_shutdown_hours != null ? [var.scheduling_shutdown_hours] : []
+    content {
+      time_windows      = scheduling_shutdown_hours.value.time_windows
+      is_enabled        = scheduling_shutdown_hours.value.is_enabled
+    }
   }
 }
