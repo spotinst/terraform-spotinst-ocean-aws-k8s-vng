@@ -15,8 +15,8 @@ variable "name" {
 
 ## Optional VNG Configurations
 variable "user_data" {
-  type        = string
-  default     = null
+  type    = string
+  default = null
 }
 variable "image_id" {
   type        = string
@@ -54,8 +54,8 @@ variable "root_volume_size" {
   description = "Size of root volume"
 }
 variable "tags" {
-  type = map(string)
-  default = null
+  type        = map(string)
+  default     = null
   description = "Tags to be added to resources"
 }
 variable "associate_public_ip_address" {
@@ -70,19 +70,19 @@ variable "restrict_scale_down" {
 }
 variable "labels" {
   type = list(object({
-    key = string
+    key   = string
     value = string
   }))
-  default = null
+  default     = null
   description = "NodeLabels / NodeSelectors"
 }
 variable "taints" {
   type = list(object({
-    key = string
-    value = string
+    key    = string
+    value  = string
     effect = string
   }))
-  default = null
+  default     = null
   description = "taints / toleration"
 }
 
@@ -96,36 +96,36 @@ variable "elastic_ip_pool_tag_selector" {
 
 ## Block Device Mappings ##
 variable "block_device_mappings" {
-  type 								= object({
-    device_name						= string
-    delete_on_termination 			= bool
-    encrypted 						= bool
-    kms_key_id 						= string
-    snapshot_id 					= string
-    volume_type 					= string
-    iops							= number
-    volume_size						= number
-    throughput						= number
-    no_device 						= string
-  })
-  default 							= null
-  description 						= "Block Device Mapping Object"
+  type = list(object({
+    device_name           = string
+    delete_on_termination = bool
+    encrypted             = bool
+    kms_key_id            = string
+    snapshot_id           = string
+    volume_type           = string
+    iops                  = number
+    volume_size           = number
+    throughput            = number
+    no_device             = string
+  }))
+  default     = []
+  description = "Block Device Mapping Object"
 }
 variable "dynamic_volume_size" {
-  type 					  			= object({
-    base_size						= number
-    resource 						= string
-    size_per_resource_unit			= number
+  type = object({
+    base_size              = number
+    resource               = string
+    size_per_resource_unit = number
   })
-  default 							= null
-  description 						= "dynamic_volume_size Object"
+  default     = null
+  description = "dynamic_volume_size Object"
 }
 ##################
 
 ## autoscale_headrooms_automatic ##
 variable "auto_headroom_percentage" {
-  type    = number
-  default = null
+  type        = number
+  default     = null
   description = "Number between 0-200 to control the headroom % of the specific Virtual Node Group. Effective when cluster.autoScaler.headroom.automatic.is_enabled = true is set on the Ocean cluster."
 }
 ##################
@@ -192,28 +192,28 @@ variable "force_delete" {
 
 ## scheduling_shutdown_hours.tf ##
 variable "scheduling_task" {
-  type 					= list(object({
-    is_enabled			= bool
-    cron_expression 	= string
-    task_type 			= string
-    num_of_units 		= number
-    cpu_per_unit 		= number
-    gpu_per_unit		= number
-    memory_per_unit		= number
+  type = list(object({
+    is_enabled      = bool
+    cron_expression = string
+    task_type       = string
+    num_of_units    = number
+    cpu_per_unit    = number
+    gpu_per_unit    = number
+    memory_per_unit = number
   }))
-  default 				= null
-  description 			= "scheduling_task Object"
+  default     = null
+  description = "scheduling_task Object"
 }
 ##################
 
 ## scheduling_tasks.tf ##
 variable "scheduling_shutdown_hours" {
-  type 					= object({
-    time_windows		= list(string)
-    is_enabled 	        = bool
+  type = object({
+    time_windows = list(string)
+    is_enabled   = bool
   })
-  default 				= null
-  description 			= "scheduling_shutdown_hours Object"
+  default     = null
+  description = "scheduling_shutdown_hours Object"
 }
 ##################
 
