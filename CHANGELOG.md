@@ -3,9 +3,21 @@
 
 
 
+<a name="v0.4.0"></a>
+## [v0.4.0] (October 5, 2022)
+
+- Allow mulitple block device mappings ([#7](https://github.com/spotinst/terraform-spotinst-NAME/issues/7))
+
+### 
+
+and numerous whitespace changes.
+* updated block_device_example to use list of objects
+
+
 <a name="v0.3.0"></a>
 ## [v0.3.0] (July 16, 2022)
 
+- Update changelog
 - Merge pull request [#5](https://github.com/spotinst/terraform-spotinst-NAME/issues/5) from spotinst/v0.2.1
 - Merge branch 'main' into v0.2.1
 - Add Update_policy
@@ -52,7 +64,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.0...HEAD
+[v0.4.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.2...v0.3.0
 [v0.2.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.1...v0.2.2
 [v0.2.1]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.0...v0.2.1
