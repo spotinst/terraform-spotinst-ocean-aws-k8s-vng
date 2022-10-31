@@ -15,7 +15,7 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   # Required tags
   tags {
     key   = "Name"
-    value = "${var.cluster_name}-ocean-cluster-node"
+    value = "${var.cluster_name}-ocean-cluster-node-${var.name}"
   }
   tags {
     key   = "kubernetes.io/cluster/${var.cluster_name}"
