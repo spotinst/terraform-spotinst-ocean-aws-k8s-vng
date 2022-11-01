@@ -1,17 +1,17 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+<a name="v0.4.0"></a>
+## [v0.4.1] (October 31, 2022)
 
+- Make tag name optional
 
 <a name="v0.4.0"></a>
 ## [v0.4.0] (October 5, 2022)
 
 - Allow mulitple block device mappings ([#7](https://github.com/spotinst/terraform-spotinst-NAME/issues/7))
-
-### 
-
-and numerous whitespace changes.
-* updated block_device_example to use list of objects
+- add numerous whitespace changes.
+- updated block_device_example to use list of objects
 
 
 <a name="v0.3.0"></a>
