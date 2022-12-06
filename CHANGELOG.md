@@ -1,10 +1,11 @@
 <a name="v0.4.2"></a>
-## [v0.4.2] (December 5, 2022)\
+## [v0.4.2] (December 5, 2022)
 
 - Remove required tags to prevent duplication
+- Add delete nodes argument
 
 <a name="v0.4.1"></a>
-## [v0.4.1] (October 31, 2022)\
+## [v0.4.1] (October 31, 2022)
 
 - Make tag name optional
 
@@ -66,9 +67,11 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.0...HEAD
+[v0.4.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.1...v0.4.2
+[v0.4.1]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.0...v0.4.1
 [v0.4.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.2...v0.3.0
 [v0.2.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.1...v0.2.2
 [v0.2.1]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.0...v0.2.1
 [v0.2.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.1.0...v0.2.0
+[v0.1.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.0.0...v0.1.0
