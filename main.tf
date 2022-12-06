@@ -11,28 +11,9 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   preferred_spot_types = var.preferred_spot_types
   root_volume_size     = length(var.block_device_mappings) == 0 ? var.root_volume_size : null
 
-
-  # Required tags
-  tags {
-    key   = "spotinst:ocean:launchspec:name"
-    value = var.name
-  }
-  tags {
-    key   = "kubernetes.io/cluster/${var.cluster_name}"
-    value = "owned"
-  }
-
-  # Default Tags
+  #Optional, tags will be inherited by the default launchspec configured in the ocean_aws resource
   dynamic "tags" {
-    for_each = data.aws_default_tags.default_tags.tags
-    content {
-      key   = tags.key
-      value = tags.value
-    }
-  }
-
-  dynamic "tags" {
-    for_each = var.tags == null ? {Name = "${var.cluster_name}-ocean-cluster-node"} : var.tags
+    for_each = var.tags == null ? {} : var.tags
     content {
       key   = tags.key
       value = tags.value
