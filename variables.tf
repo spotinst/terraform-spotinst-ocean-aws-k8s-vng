@@ -188,6 +188,11 @@ variable "force_delete" {
   default     = false
   description = "When set to true, delete even if it is the last Virtual Node Group (also, the default Virtual Node Group must be configured with useAsTemlateOnly = true). Should be set at creation or update, but will be used only at deletion."
 }
+variable "delete_nodes" {
+  type        = bool
+  default     = false
+  description = "When set to true, all instances belonging to the deleted launch specification will be drained, detached, and terminated."
+}
 ##################
 
 ## scheduling_shutdown_hours.tf ##
