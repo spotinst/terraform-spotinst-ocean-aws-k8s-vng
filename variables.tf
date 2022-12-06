@@ -56,7 +56,7 @@ variable "root_volume_size" {
 variable "tags" {
   type        = map(string)
   default     = null
-  description = "Tags to be added to resources"
+  description = "(Optional) Tags by default will be inherited from the ocean_aws resource. If set this will overwrite all tags and not add additional tags to those already configured."
 }
 variable "associate_public_ip_address" {
   type        = bool

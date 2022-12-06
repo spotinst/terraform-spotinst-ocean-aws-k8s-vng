@@ -1,8 +1,10 @@
-<a name="unreleased"></a>
-## [Unreleased]
+<a name="v0.4.2"></a>
+## [v0.4.2] (December 5, 2022)\
 
-<a name="v0.4.0"></a>
-## [v0.4.1] (October 31, 2022)
+- Remove required tags to prevent duplication
+
+<a name="v0.4.1"></a>
+## [v0.4.1] (October 31, 2022)\
 
 - Make tag name optional
 

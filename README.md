@@ -26,9 +26,6 @@ module "ocean-aws-k8s-vng_stateless" {
   #ami_id = "" # Can change the AMI
 
   labels = [{key="type",value="stateless"}]
-  #taints = [{key="type",value="stateless",effect="NoSchedule"}]
-  
-  tags = {CreatedBy = "terraform"} #Addition Tags
 }
 
 ## Create additional Ocean Virtual Node Group (launchspec) ##
@@ -39,7 +36,6 @@ module "ocean-aws-k8s-vng_gpu" {
   ocean_id = module.ocean-aws-k8s.ocean_id
   
   name = "gpu"  # Name of VNG in Ocean
-  #ami_id = "" # Can chang  # Add Labels or taints
   
   labels = [{key="type",value="gpu"}]
   taints = [{key="type",value="gpu",effect="NoSchedule"}]
@@ -65,7 +61,7 @@ module "ocean-controller" {
 
 | Name | Version |
 |------|---------|
-| spotinst/spotinst | >= 1.64.1 |
+| spotinst/spotinst | >= 1.78 |
 
 ## Modules
 * `ocean-aws-k8s` - Creates Ocean Cluster [Doc](https://registry.terraform.io/modules/spotinst/ocean-aws-k8s/spotinst/latest)
