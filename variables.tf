@@ -186,7 +186,7 @@ variable "initial_nodes" {
 variable "force_delete" {
   type        = bool
   default     = false
-  description = "When set to true, delete even if it is the last Virtual Node Group (also, the default Virtual Node Group must be configured with useAsTemlateOnly = true). Should be set at creation or update, but will be used only at deletion."
+  description = "When set to true, delete even if it is the last Virtual Node Group (also, the default Virtual Node Group must be configured with useAsTemplateOnly = true). Should be set at creation or update, but will be used only at deletion."
 }
 variable "delete_nodes" {
   type        = bool
