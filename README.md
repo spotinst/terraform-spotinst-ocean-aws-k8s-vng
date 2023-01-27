@@ -18,13 +18,11 @@ module "ocean-aws-k8s" {
 ## Create Ocean Virtual Node Group (launchspec) ##
 module "ocean-aws-k8s-vng_stateless" {
   source = "spotinst/ocean-aws-k8s-vng/spotinst"
-  
-  cluster_name = local.cluster_name
+
+  name = "stateless" # Name of VNG in Ocean
   ocean_id = module.ocean-aws-k8s.ocean_id
   
-  name = "stateless" # Name of VNG in Ocean
   #ami_id = "" # Can change the AMI
-
   labels = [{key="type",value="stateless"}]
 }
 
@@ -32,27 +30,14 @@ module "ocean-aws-k8s-vng_stateless" {
 module "ocean-aws-k8s-vng_gpu" {
   source = "spotinst/ocean-aws-k8s-vng/spotinst"
 
-  cluster_name = local.cluster_name
-  ocean_id = module.ocean-aws-k8s.ocean_id
-  
   name = "gpu"  # Name of VNG in Ocean
+  ocean_id = module.ocean-aws-k8s.ocean_id
   
   labels = [{key="type",value="gpu"}]
   taints = [{key="type",value="gpu",effect="NoSchedule"}]
   
   #instance_types = ["g4dn.xlarge","g4dn.2xlarge"] # Limit VNG to specific instance types
   spot_percentage = 50 # Change the spot %
-}
-
-module "ocean-controller" {
-  source = "spotinst/ocean-controller/spotinst"
-
-  # Credentials.
-  spotinst_token   = "redacted"
-  spotinst_account = "redacted"
-
-  # Configuration.
-  cluster_identifier = var.cluster_name
 }
 ```
 ~> You must configure the `spotinst_ocean_aws` resource. Ensure `spotinst_ocean_aws` resource (defined in `ocean-aws-k8s` module) is defined before this module as the `ocean_id` is needed. 
@@ -61,7 +46,7 @@ module "ocean-controller" {
 
 | Name | Version |
 |------|---------|
-| spotinst/spotinst | >= 1.78 |
+| spotinst/spotinst | >= 1.95 |
 
 ## Modules
 * `ocean-aws-k8s` - Creates Ocean Cluster [Doc](https://registry.terraform.io/modules/spotinst/ocean-aws-k8s/spotinst/latest)

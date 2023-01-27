@@ -3,10 +3,6 @@ variable "ocean_id" {
   type        = string
   description = "Ocean ID"
 }
-variable "cluster_name" {
-  type        = string
-  description = "Name of Cluster"
-}
 variable "name" {
   type        = string
   description = "Name for nodegroup (VNG)"
