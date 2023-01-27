@@ -2,12 +2,9 @@
 module "ocean_eks_launchspec_stateless" {
   source = "spotinst/ocean-aws-k8s-vng/spotinst"
 
-  cluster_name       = "Example-EKS"
-  ocean_id           = module.ocean-aws-k8s.ocean_id
-  min_instance_count = 1
-
   # Name of VNG in Ocean
   name = "stateless"
+  ocean_id           = module.ocean-aws-k8s.ocean_id
 
   # Add Labels or taints
   labels = [{ key = "type", value = "stateless" }]
@@ -22,6 +19,4 @@ module "ocean_eks_launchspec_stateless" {
     "Sun:01:00-Mon:07:00"]
     is_enabled = false
   }
-
-  initial_nodes = 1
 }
