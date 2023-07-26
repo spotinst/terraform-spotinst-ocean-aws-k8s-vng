@@ -109,7 +109,7 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
 
   delete_options {
     force_delete = var.force_delete
-    delete_nodes=var.delete_nodes
+    delete_nodes = var.delete_nodes
   }
 
 
