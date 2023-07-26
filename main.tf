@@ -23,6 +23,11 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   associate_public_ip_address = var.associate_public_ip_address
   restrict_scale_down         = var.restrict_scale_down
 
+  instance_metadata_options {
+    http_tokens                 = var.http_tokens
+    http_put_response_hop_limit = var.http_put_response_hop_limit
+  }
+
   dynamic "labels" {
     for_each = var.labels == null ? [] : var.labels
     content {
