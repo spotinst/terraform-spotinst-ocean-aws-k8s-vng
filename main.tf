@@ -137,4 +137,26 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
       batch_size_percentage = var.batch_size_percentage
     }
   }
+  instance_types_filters {
+    categories                =   var.instance_types_filters_categories
+    disk_types                =   var.instance_types_filters_disk_types
+    exclude_families          =   var.instance_types_filters_exclude_families
+    exclude_metal             =   var.instance_types_filters_exclude_metal
+    hypervisor                =   var.instance_types_filters_hypervisor
+    include_families          =   var.instance_types_filters_include_families
+    is_ena_supported          =   var.instance_types_filters_is_ena_supported
+    max_gpu                   =   var.instance_types_filters_max_gpu
+    min_gpu                   =   var.instance_types_filters_min_gpu
+    max_memory_gib            =   var.instance_types_filters_max_memory_gib
+    max_network_performance   =   var.instance_types_filters_max_network_performance
+    max_vcpu                  =   var.instance_types_filters_max_vcpu
+    min_enis                  =   var.instance_types_filters_min_enis
+    min_memory_gib            =   var.instance_types_filters_min_memory_gib
+    min_network_performance   =   var.instance_types_filters_min_network_performance
+    min_vcpu                  =   var.instance_types_filters_min_vcpu
+    root_device_types         =   var.instance_types_filters_root_device_types
+    virtualization_types      =   var.instance_types_filters_virtualization_types
+  }
+
+
 }
