@@ -230,3 +230,96 @@ variable "batch_size_percentage" {
   description = "Sets the percentage of the instances to deploy in each batch."
 }
 ##################
+
+## instance_types_filters ##
+variable "instance_types_filters_max_gpu" {
+  default     = null
+  type        = number
+  description = "Maximum total number of GPUs."
+}
+variable "instance_types_filters_min_gpu" {
+  default     = null
+  type        = number
+  description = "Minimum total number of GPUs."
+}
+variable "instance_types_filters_max_memory_gib" {
+  default     = null
+  type        = number
+  description = "Maximum amount of Memory (GiB)."
+}
+variable "instance_types_filters_max_network_performance" {
+  default     = null
+  type        = number
+  description = "Maximum Bandwidth in Gib/s of network performance."
+}
+variable "instance_types_filters_max_vcpu" {
+  default     = null
+  type        = number
+  description = "Maximum number of vcpus available."
+}
+variable "instance_types_filters_min_enis" {
+  default     = null
+  type        = number
+  description = "Minimum number of network interfaces (ENIs)."
+}
+variable "instance_types_filters_min_memory_gib" {
+  default     = null
+  type        = number
+  description = "Minimum amount of Memory (GiB)."
+}
+variable "instance_types_filters_min_network_performance" {
+  default     = null
+  type        = number
+  description = "Minimum Bandwidth in Gib/s of network performance."
+}
+variable "instance_types_filters_min_vcpu" {
+  default     = null
+  type        = number
+  description = "Minimum number of vcpus available."
+}
+variable "instance_types_filters_exclude_metal" {
+  type        = bool
+  default     = false
+  description = "In case excludeMetal is set to true, metal types will not be available for scaling."
+}
+variable "instance_types_filters_is_ena_supported" {
+  type        = bool
+  default     = null
+  description = "Ena is supported or not."
+}
+variable "instance_types_filters_categories" {
+  type        = list(string)
+  default     = null
+  description = "The filtered instance types will belong to one of the categories types from this list. Valid values 'Accelerated_computing', 'Compute_optimized', 'General_purpose', 'Memory_optimized', 'Storage_optimized'"
+}
+variable "instance_types_filters_disk_types" {
+  type        = list(string)
+  default     = null
+  description = "The filtered instance types will have one of the disk type from this list. Valid values 'NVMe', 'EBS', 'SSD', 'HDD'"
+}
+variable "instance_types_filters_exclude_families" {
+  type        = list(string)
+  default     = null
+  description = "Types belonging to a family from the ExcludeFamilies will not be available for scaling (asterisk wildcard is also supported). For example, C* will exclude instance types from these families: c5, c4, c4a, etc."
+}
+variable "instance_types_filters_hypervisor" {
+  type        = list(string)
+  default     = null
+  description = "The filtered instance types will have a hypervisor type from this list. Valid values 'nitro', 'xen'"
+}
+variable "instance_types_filters_include_families" {
+  type        = list(string)
+  default     = null
+  description = "Types belonging to a family from the IncludeFamilies will be available for scaling (asterisk wildcard is also supported). For example, C* will include instance types from these families: c5, c4, c4a, etc."
+}
+variable "instance_types_filters_root_device_types" {
+  type        = list(string)
+  default     = null
+  description = "Minimum number of vcpus available. Valid values 'ebs', 'instance-store'"
+}
+variable "instance_types_filters_virtualization_types" {
+  type        = list(string)
+  default     = null
+  description = "The filtered instance types will support at least one of the virtualization types from this list. Valid values 'hvm', 'paravirtual'"
+}
+####################

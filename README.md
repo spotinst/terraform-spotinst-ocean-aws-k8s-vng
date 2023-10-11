@@ -39,6 +39,31 @@ module "ocean-aws-k8s-vng_gpu" {
   #instance_types = ["g4dn.xlarge","g4dn.2xlarge"] # Limit VNG to specific instance types
   spot_percentage = 50 # Change the spot %
 }
+
+## Create Ocean Virtual Node Group (launchSpec) with instance_type_filters ##
+module "ocean-aws-k8s-vng" {
+  source  = "spotinst/ocean-aws-k8s-vng/spotinst"
+  ocean_id = module.ocean-aws-k8s.ocean_id
+  name = "test-vng"
+  instance_types_filters_categories               =   ["Accelerated_computing", "Compute_optimized"]
+  instance_types_filters_disk_types               =   ["NVMe", "EBS"]
+  instance_types_filters_exclude_families         =   ["t2","R4*"]
+  instance_types_filters_exclude_metal            =   true
+  instance_types_filters_hypervisor               =   ["nitro"]
+  instance_types_filters_include_families         =   ["c5*", "g5"]
+  instance_types_filters_is_ena_supported         =   true
+  instance_types_filters_max_gpu                  =   4
+  instance_types_filters_min_gpu                  =   0
+  instance_types_filters_max_memory_gib           =   16
+  instance_types_filters_max_network_performance  =   20
+  instance_types_filters_max_vcpu                 =   16
+  instance_types_filters_min_enis                 =   2
+  instance_types_filters_min_memory_gib           =   8
+  instance_types_filters_min_network_performance  =   2
+  instance_types_filters_min_vcpu                 =   2
+  instance_types_filters_root_device_types        =   ["ebs"]
+  instance_types_filters_virtualization_types     =   ["hvm"]
+}
 ```
 ~> You must configure the `spotinst_ocean_aws` resource. Ensure `spotinst_ocean_aws` resource (defined in `ocean-aws-k8s` module) is defined before this module as the `ocean_id` is needed. 
 
@@ -73,3 +98,25 @@ We use GitHub issues for tracking bugs and feature requests. Please use these co
 ## Contributing
 
 Please see the [contribution guidelines](CONTRIBUTING.md).
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [ocean-aws-k8s-vng](https://registry.terraform.io/providers/spotinst/spotinst/latest/docs/resources/ocean_aws) | resource |
+
+## Inputs
+
+| Name                                                                                                                                                   | Description                                                                                                                                                                                                                                                                                                                                                                                            | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Default | Required |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|:--------:|
+| <a name="input_ocean_id"></a> [ocean\_id](#input\_ocean\_id)| The Ocean cluster identifier. Required for Launch Spec creation.| `string`| `null` | yes |
+| <a name="input_name"></a> [name](#input\_name)| Set launch specification name.| `string`| `null` | no |
+| <a name="input_instance_types_filters"></a> [instance\_types\_filters](#input\_instance\_types\_filters)|The instance types that match with all filters compose the Virtual Node Group's instanceTypes parameter. The architectures that come from the Virtual Node Group's images will be taken into account when using this parameter. Cannot be configured together with Virtual Node Group's instanceTypes and with the Cluster's whitelist/blacklist/filters.| <pre>object({<br>    categories                = list(string)<br>    disk_types                = list(string)<br>    exclude_families          = list(string)<br>    exclude_metal             = bool<br>    hypervisor                = list(string)<br>    include_families          = list(string)<br>    is_ena_supported          = bool<br>    max_gpu                   = number<br>    min_gpu                   = number<br>    max_memory_gib            = number<br>    max_network_performance   = number<br>    max_vcpu                  = number<br>    min_enis                  = number<br>    min_memory_gib            = number<br>    min_network_performance   = number<br>    min_vcpu                  = number<br>    root_device_types         = list(string)<br>    virtualization_types      = list(string)<br>  })</pre> | `null` | no |
+
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_virtual_node_group_id"></a> [virtual\_node\_group\_id](#output\_virtual\_node\_group\_id) | The virtual node group ID |
+<!-- END_TF_DOCS -->
