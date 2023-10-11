@@ -43,7 +43,7 @@ module "ocean-aws-k8s-vng_gpu" {
 ## Create Ocean Virtual Node Group (launchSpec) with instance_type_filters ##
 module "ocean-aws-k8s-vng" {
   source  = "spotinst/ocean-aws-k8s-vng/spotinst"
-  ocean_id = "o-123456"
+  ocean_id = module.ocean-aws-k8s.ocean_id
   name = "test-vng"
   instance_types_filters_categories               =   ["Accelerated_computing", "Compute_optimized"]
   instance_types_filters_disk_types               =   ["NVMe", "EBS"]
