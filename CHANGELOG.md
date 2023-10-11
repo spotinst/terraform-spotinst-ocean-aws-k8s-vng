@@ -2,11 +2,23 @@
 ## [Unreleased]
 
 
+
+<a name="v0.5.0"></a>
+## [v0.5.0] (October 11, 2023)
+
+- Added support for `instance_types_filters`. ([#17](https://github.com/spotinst/terraform-spotinst-NAME/issues/17))
+- 🌒 work in progress Wed Oct 11 13:50:50 2023 ([#18](https://github.com/spotinst/terraform-spotinst-NAME/issues/18))
+- [src] removed common workflow
+- [src] added common workflow
+
+
 <a name="v0.4.3"></a>
 ## [v0.4.3] (January 26, 2023)
 
+- docs(changelog): v0.4.3
 - Remove the use of cluster_name
-- fix typo in  "force_delete" variable description ([#13](https://github.com/spotinst/terraform-spotinst-NAME/issues/13))
+- fix typo in  "force_delete" varaible description ([#13](https://github.com/spotinst/terraform-spotinst-NAME/issues/13))
+- Update CHANGELOG.md
 - support delete_node ([#12](https://github.com/spotinst/terraform-spotinst-NAME/issues/12))
 
 
@@ -14,24 +26,25 @@
 ## [v0.4.2] (December 5, 2022)
 
 - Remove required tags to prevent duplication ([#11](https://github.com/spotinst/terraform-spotinst-NAME/issues/11))
-
-
-<a name="v0.4.1"></a>
-## [V0.4.1] 
-
--Make tag name optional ([#9](https://github.com/spotinst/terraform-spotinst-NAME/issues/9))
+- V0.4.1 - Make tag name optional ([#9](https://github.com/spotinst/terraform-spotinst-NAME/issues/9))
 
 
 <a name="v0.4.0"></a>
 ## [v0.4.0] (October 5, 2022)
 
+- Update CHANGELOG
 - Allow mulitple block device mappings ([#7](https://github.com/spotinst/terraform-spotinst-NAME/issues/7))
-- updated block_device_example to use list of objects
+
+### 
+
+and numerous whitespace changes.
+* updated block_device_example to use list of objects
 
 
 <a name="v0.3.0"></a>
 ## [v0.3.0] (July 16, 2022)
 
+- Update changelog
 - Merge pull request [#5](https://github.com/spotinst/terraform-spotinst-NAME/issues/5) from spotinst/v0.2.1
 - Merge branch 'main' into v0.2.1
 - Add Update_policy
@@ -78,10 +91,10 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.3...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.5.0...HEAD
+[v0.5.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.3...v0.5.0
 [v0.4.3]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.2...v0.4.3
-[v0.4.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.1...v0.4.2
-[v0.4.1]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.0...v0.4.1
+[v0.4.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.0...v0.4.2
 [v0.4.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.2...v0.3.0
 [v0.2.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.1...v0.2.2
