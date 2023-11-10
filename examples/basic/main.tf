@@ -11,9 +11,10 @@ terraform {
 }
 ## Create Ocean VNG on Spot.io ##
 module "ocean-aws-k8s-vng" {
-  source                                          = "spotinst/ocean-aws-k8s-vng/spotinst"
-  ocean_id                                        = "o-123456"
-  name                                            = "test-vng"
+  source                                          =   "spotinst/ocean-aws-k8s-vng/spotinst"
+  ocean_id                                        =   "o-123456"
+  name                                            =   "test-vng"
+  instance_types_filters_enable                   =   true
   instance_types_filters_categories               =   ["Accelerated_computing", "Compute_optimized"]
   instance_types_filters_disk_types               =   ["NVMe", "EBS"]
   instance_types_filters_exclude_families         =   ["t2","R4*"]
