@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.6.0"></a>
+## [v0.6.0] (November 11, 2023)
+
+- fix: added `instance_types_filters_enable` variable to handle `instance_types_filters` object ([#23](https://github.com/spotinst/terraform-spotinst-NAME/issues/23))
+
+
 <a name="v0.5.0"></a>
 ## [v0.5.0] (October 11, 2023)
 
+- changelog v0.5.0 ([#19](https://github.com/spotinst/terraform-spotinst-NAME/issues/19))
 - Added support for `instance_types_filters`. ([#17](https://github.com/spotinst/terraform-spotinst-NAME/issues/17))
 - 🌒 work in progress Wed Oct 11 13:50:50 2023 ([#18](https://github.com/spotinst/terraform-spotinst-NAME/issues/18))
 - [src] removed common workflow
@@ -91,7 +98,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.6.0...HEAD
+[v0.6.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.5.0...v0.6.0
 [v0.5.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.3...v0.5.0
 [v0.4.3]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.2...v0.4.3
 [v0.4.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.0...v0.4.2
