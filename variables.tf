@@ -279,7 +279,7 @@ variable "instance_types_filters_min_vcpu" {
 }
 variable "instance_types_filters_exclude_metal" {
   type        = bool
-  default     = false
+  default     = null
   description = "In case excludeMetal is set to true, metal types will not be available for scaling."
 }
 variable "instance_types_filters_is_ena_supported" {
@@ -321,5 +321,11 @@ variable "instance_types_filters_virtualization_types" {
   type        = list(string)
   default     = null
   description = "The filtered instance types will support at least one of the virtualization types from this list. Valid values 'hvm', 'paravirtual'"
+}
+
+variable "instance_types_filters_enable" {
+  type        = bool
+  default     = null
+  description = "'instance_types_filters_enable' to be set to true to have instance_types_filters configured in the virtual node group."
 }
 ####################
