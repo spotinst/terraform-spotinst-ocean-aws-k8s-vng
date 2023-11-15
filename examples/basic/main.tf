@@ -33,4 +33,5 @@ module "ocean-aws-k8s-vng" {
   instance_types_filters_min_vcpu                 =   2
   instance_types_filters_root_device_types        =   ["ebs"]
   instance_types_filters_virtualization_types     =   ["hvm"]
+  images                      = {image_id = "ami-12345"}
 }

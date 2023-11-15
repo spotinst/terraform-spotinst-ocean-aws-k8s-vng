@@ -64,6 +64,7 @@ module "ocean-aws-k8s-vng" {
   instance_types_filters_min_vcpu                 =   2
   instance_types_filters_root_device_types        =   ["ebs"]
   instance_types_filters_virtualization_types     =   ["hvm"]
+  images                      = {image_id = "ami-12345"}
 }
 ```
 ~> You must configure the `spotinst_ocean_aws` resource. Ensure `spotinst_ocean_aws` resource (defined in `ocean-aws-k8s` module) is defined before this module as the `ocean_id` is needed. 

@@ -161,5 +161,11 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
       virtualization_types      =   var.instance_types_filters_virtualization_types
     }
   }
+  dynamic "images" {
+      for_each = var.images
+      content {
+        image_id   = images.image_id
+      }
+    }
 
 }

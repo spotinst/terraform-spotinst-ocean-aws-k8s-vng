@@ -328,4 +328,9 @@ variable "instance_types_filters_enable" {
   default     = null
   description = "'instance_types_filters_enable' to be set to true to have instance_types_filters configured in the virtual node group."
 }
+variable "images" {
+  type        = map(string)
+  default     = null
+  description = "Array of objects (Image object, containing the id of the image used to launch instances.)"
+}
 ####################
