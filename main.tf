@@ -162,4 +162,10 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     }
   }
 
+  dynamic "images" {
+    for_each = var.images == null ? [] : var.images
+    content {
+      image_id   = images.value["image_id"]
+    }
+  }
 }
