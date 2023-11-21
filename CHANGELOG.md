@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.7.0"></a>
+## [v0.7.0] (November 21, 2023)
+
+- added support for `images` object ([#25](https://github.com/spotinst/terraform-spotinst-NAME/issues/25))
+
+
 <a name="v0.6.0"></a>
 ## [v0.6.0] (November 11, 2023)
 
+- changelog_0.6.0 ([#24](https://github.com/spotinst/terraform-spotinst-NAME/issues/24))
 - fix: added `instance_types_filters_enable` variable to handle `instance_types_filters` object ([#23](https://github.com/spotinst/terraform-spotinst-NAME/issues/23))
 
 
@@ -98,7 +105,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.7.0...HEAD
+[v0.7.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.6.0...v0.7.0
 [v0.6.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.5.0...v0.6.0
 [v0.5.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.3...v0.5.0
 [v0.4.3]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.2...v0.4.3
