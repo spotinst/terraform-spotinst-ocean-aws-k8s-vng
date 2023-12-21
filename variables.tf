@@ -92,20 +92,9 @@ variable "elastic_ip_pool_tag_selector" {
 
 ## Block Device Mappings ##
 variable "block_device_mappings" {
-  type = list(object({
-    device_name           = string
-    delete_on_termination = bool
-    encrypted             = bool
-    kms_key_id            = string
-    snapshot_id           = string
-    volume_type           = string
-    iops                  = number
-    volume_size           = number
-    throughput            = number
-    no_device             = string
-  }))
-  default     = []
   description = "Block Device Mapping Object"
+  type        = list(any)
+  default     = []
 }
 variable "dynamic_volume_size" {
   type = object({
