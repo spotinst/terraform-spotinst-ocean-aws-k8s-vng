@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.8.0"></a>
+## [v0.8.0] (January 2, 2024)
+
+- fixed the attributes of `block_device_mappings` object to accept null ([#27](https://github.com/spotinst/terraform-spotinst-NAME/issues/27))
+
+
 <a name="v0.7.0"></a>
 ## [v0.7.0] (November 21, 2023)
 
+- Changelog v0.7.0 ([#26](https://github.com/spotinst/terraform-spotinst-NAME/issues/26))
 - added support for `images` object ([#25](https://github.com/spotinst/terraform-spotinst-NAME/issues/25))
 
 
@@ -105,7 +112,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.8.0...HEAD
+[v0.8.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.7.0...v0.8.0
 [v0.7.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.6.0...v0.7.0
 [v0.6.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.5.0...v0.6.0
 [v0.5.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.3...v0.5.0
