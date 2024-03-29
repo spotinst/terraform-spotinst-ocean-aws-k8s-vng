@@ -78,6 +78,10 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     }
   }
 
+  ephemeral_storage{
+    ephemeral_storage_device_name = var.ephemeral_storage_device_name
+  }
+
   autoscale_headrooms_automatic {
     auto_headroom_percentage = var.auto_headroom_percentage
   }

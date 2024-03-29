@@ -11,7 +11,7 @@ module "ocean-aws-k8s-vng_stateless" {
   taints = [{ key = "type", value = "worker", effect = "NoSchedule" }]
 
   block_device_mappings       = [{
-    device_name               = "/dev/xvda"
+    device_name               = "/dev/xvdb"
     encrypted                 = false
     volume_type               = "gp3"
   }
@@ -21,4 +21,6 @@ module "ocean-aws-k8s-vng_stateless" {
     resource                  = "CPU"
     size_per_resource_unit    = 20
   }
+
+  ephemeral_storage_device_name = "/dev/xvdb"
 }
