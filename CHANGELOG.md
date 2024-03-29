@@ -3,9 +3,17 @@
 
 
 
+<a name="v0.9.0"></a>
+## [v0.9.0] (March 29, 2024)
+
+- feat: added support for `ephemeral_storage_device_name`. ([#30](https://github.com/spotinst/terraform-spotinst-NAME/issues/30))
+- change-owner-request ([#29](https://github.com/spotinst/terraform-spotinst-NAME/issues/29))
+
+
 <a name="v0.8.0"></a>
 ## [v0.8.0] (January 2, 2024)
 
+- changelog v0.8.0 ([#28](https://github.com/spotinst/terraform-spotinst-NAME/issues/28))
 - fixed the attributes of `block_device_mappings` object to accept null ([#27](https://github.com/spotinst/terraform-spotinst-NAME/issues/27))
 
 
@@ -77,13 +85,13 @@ and numerous whitespace changes.
 - Update BDM and add example for block_device_mapping
 
 
-<a name="v0.2.2"></a>
-## [v0.2.2] (July 13, 2022)
-
-
-
 <a name="v0.2.1"></a>
 ## [v0.2.1] (July 13, 2022)
+
+
+
+<a name="v0.2.2"></a>
+## [v0.2.2] (July 13, 2022)
 
 - Merge pull request [#6](https://github.com/spotinst/terraform-spotinst-NAME/issues/6) from open-store/remove_required_versions
 - retain spotinst version
@@ -112,7 +120,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.9.0...HEAD
+[v0.9.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.8.0...v0.9.0
 [v0.8.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.7.0...v0.8.0
 [v0.7.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.6.0...v0.7.0
 [v0.6.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.5.0...v0.6.0
@@ -120,7 +129,7 @@ and numerous whitespace changes.
 [v0.4.3]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.2...v0.4.3
 [v0.4.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.0...v0.4.2
 [v0.4.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.3.0...v0.4.0
-[v0.3.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.2...v0.3.0
-[v0.2.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.1...v0.2.2
-[v0.2.1]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.0...v0.2.1
+[v0.3.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.1...v0.3.0
+[v0.2.1]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.2...v0.2.1
+[v0.2.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.0...v0.2.2
 [v0.2.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.1.0...v0.2.0
