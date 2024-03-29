@@ -326,3 +326,11 @@ variable "images" {
   description = "Array of objects (Image object, containing the id of the image used to launch instances.)"
 }
 ####################
+
+## ephemeral_storage ##
+variable "ephemeral_storage_device_name" {
+  type        = string
+  default     = null
+  description = "Specify an alternative device name from which ephemeral storage calculations should be derived. This parameter is used when the ephemeral storage should not utilize the root device. Provide the device name configured in the VNG's BDM or AMI's BDM that differs from the default root device."
+}
+##################
