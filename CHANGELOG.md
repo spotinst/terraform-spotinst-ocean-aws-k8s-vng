@@ -3,32 +3,40 @@
 
 
 
+<a name="v0.9.0"></a>
+## [v0.9.0] (March 29, 2024)
+
+- feat: added support for `ephemeral_storage_device_name`. ([#30](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/30))
+- change-owner-request ([#29](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/29))
+
+
 <a name="v0.8.0"></a>
 ## [v0.8.0] (January 2, 2024)
 
-- fixed the attributes of `block_device_mappings` object to accept null ([#27](https://github.com/spotinst/terraform-spotinst-NAME/issues/27))
+- changelog v0.8.0 ([#28](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/28))
+- fixed the attributes of `block_device_mappings` object to accept null ([#27](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/27))
 
 
 <a name="v0.7.0"></a>
 ## [v0.7.0] (November 21, 2023)
 
-- Changelog v0.7.0 ([#26](https://github.com/spotinst/terraform-spotinst-NAME/issues/26))
-- added support for `images` object ([#25](https://github.com/spotinst/terraform-spotinst-NAME/issues/25))
+- Changelog v0.7.0 ([#26](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/26))
+- added support for `images` object ([#25](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/25))
 
 
 <a name="v0.6.0"></a>
 ## [v0.6.0] (November 11, 2023)
 
-- changelog_0.6.0 ([#24](https://github.com/spotinst/terraform-spotinst-NAME/issues/24))
-- fix: added `instance_types_filters_enable` variable to handle `instance_types_filters` object ([#23](https://github.com/spotinst/terraform-spotinst-NAME/issues/23))
+- changelog_0.6.0 ([#24](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/24))
+- fix: added `instance_types_filters_enable` variable to handle `instance_types_filters` object ([#23](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/23))
 
 
 <a name="v0.5.0"></a>
 ## [v0.5.0] (October 11, 2023)
 
-- changelog v0.5.0 ([#19](https://github.com/spotinst/terraform-spotinst-NAME/issues/19))
-- Added support for `instance_types_filters`. ([#17](https://github.com/spotinst/terraform-spotinst-NAME/issues/17))
-- 🌒 work in progress Wed Oct 11 13:50:50 2023 ([#18](https://github.com/spotinst/terraform-spotinst-NAME/issues/18))
+- changelog v0.5.0 ([#19](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/19))
+- Added support for `instance_types_filters`. ([#17](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/17))
+- 🌒 work in progress Wed Oct 11 13:50:50 2023 ([#18](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/18))
 - [src] removed common workflow
 - [src] added common workflow
 
@@ -38,23 +46,23 @@
 
 - docs(changelog): v0.4.3
 - Remove the use of cluster_name
-- fix typo in  "force_delete" varaible description ([#13](https://github.com/spotinst/terraform-spotinst-NAME/issues/13))
+- fix typo in  "force_delete" varaible description ([#13](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/13))
 - Update CHANGELOG.md
-- support delete_node ([#12](https://github.com/spotinst/terraform-spotinst-NAME/issues/12))
+- support delete_node ([#12](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/12))
 
 
 <a name="v0.4.2"></a>
 ## [v0.4.2] (December 5, 2022)
 
-- Remove required tags to prevent duplication ([#11](https://github.com/spotinst/terraform-spotinst-NAME/issues/11))
-- V0.4.1 - Make tag name optional ([#9](https://github.com/spotinst/terraform-spotinst-NAME/issues/9))
+- Remove required tags to prevent duplication ([#11](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/11))
+- V0.4.1 - Make tag name optional ([#9](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/9))
 
 
 <a name="v0.4.0"></a>
 ## [v0.4.0] (October 5, 2022)
 
 - Update CHANGELOG
-- Allow mulitple block device mappings ([#7](https://github.com/spotinst/terraform-spotinst-NAME/issues/7))
+- Allow mulitple block device mappings ([#7](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/7))
 
 ### 
 
@@ -66,7 +74,7 @@ and numerous whitespace changes.
 ## [v0.3.0] (July 16, 2022)
 
 - Update changelog
-- Merge pull request [#5](https://github.com/spotinst/terraform-spotinst-NAME/issues/5) from spotinst/v0.2.1
+- Merge pull request [#5](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/5) from spotinst/v0.2.1
 - Merge branch 'main' into v0.2.1
 - Add Update_policy
 - Add scheduling_shutdown_hours and scheduling_tasks
@@ -77,15 +85,15 @@ and numerous whitespace changes.
 - Update BDM and add example for block_device_mapping
 
 
-<a name="v0.2.2"></a>
-## [v0.2.2] (July 13, 2022)
-
-
-
 <a name="v0.2.1"></a>
 ## [v0.2.1] (July 13, 2022)
 
-- Merge pull request [#6](https://github.com/spotinst/terraform-spotinst-NAME/issues/6) from open-store/remove_required_versions
+
+
+<a name="v0.2.2"></a>
+## [v0.2.2] (July 13, 2022)
+
+- Merge pull request [#6](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/6) from open-store/remove_required_versions
 - retain spotinst version
 - remove required dependencies versions so that Ocean and AWS can be pinned elsewhere
 - docs(changelog): v0.2.0
@@ -96,7 +104,7 @@ and numerous whitespace changes.
 
 - fix changelog
 - docs(changelog): v0.3.0
-- [fix] elastic_ip_pool to  - remove errors when null and support multiple tags ([#4](https://github.com/spotinst/terraform-spotinst-NAME/issues/4))
+- [fix] elastic_ip_pool to  - remove errors when null and support multiple tags ([#4](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/4))
 - Merge remote-tracking branch 'origin/main'
 - Update CODEOWNERS
 - Update CODEOWNERS
@@ -108,19 +116,20 @@ and numerous whitespace changes.
 <a name="v0.1.0"></a>
 ## v0.1.0 (December 21, 2021)
 
-- initial commit ([#1](https://github.com/spotinst/terraform-spotinst-NAME/issues/1))
+- initial commit ([#1](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/1))
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.8.0...HEAD
-[v0.8.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.7.0...v0.8.0
-[v0.7.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.6.0...v0.7.0
-[v0.6.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.5.0...v0.6.0
-[v0.5.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.3...v0.5.0
-[v0.4.3]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.2...v0.4.3
-[v0.4.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.4.0...v0.4.2
-[v0.4.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.3.0...v0.4.0
-[v0.3.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.2...v0.3.0
-[v0.2.2]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.1...v0.2.2
-[v0.2.1]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.2.0...v0.2.1
-[v0.2.0]: https://github.com/spotinst/terraform-spotinst-NAME/compare/v0.1.0...v0.2.0
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.9.0...HEAD
+[v0.9.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.8.0...v0.9.0
+[v0.8.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.7.0...v0.8.0
+[v0.7.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.6.0...v0.7.0
+[v0.6.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.5.0...v0.6.0
+[v0.5.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.4.3...v0.5.0
+[v0.4.3]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.4.2...v0.4.3
+[v0.4.2]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.4.0...v0.4.2
+[v0.4.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.3.0...v0.4.0
+[v0.3.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.2.1...v0.3.0
+[v0.2.1]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.2.2...v0.2.1
+[v0.2.2]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.2.0...v0.2.2
+[v0.2.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.1.0...v0.2.0
