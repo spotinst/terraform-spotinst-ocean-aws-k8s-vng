@@ -75,7 +75,9 @@ module "ocean-aws-k8s-vng" {
     resource                                      =   "CPU"
     size_per_resource_unit                        =   20
   }
-  ephemeral_storage_device_name                   = "/dev/xvdb"
+  ephemeral_storage_device_name                   =   "/dev/xvdb"
+  preferred_spot_types                            =   ["m4.xlarge", "c3.large"]
+  preferred_od_types                              =   ["t3.medium", "c4.large"]
 
 }
 ```

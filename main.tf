@@ -9,6 +9,7 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   subnet_ids           = var.subnet_ids
   instance_types       = var.instance_types
   preferred_spot_types = var.preferred_spot_types
+  preferred_od_types   = var.preferred_od_types
   root_volume_size     = length(var.block_device_mappings) == 0 ? var.root_volume_size : null
 
   #Optional, tags will be inherited by the default launchspec configured in the ocean_aws resource
