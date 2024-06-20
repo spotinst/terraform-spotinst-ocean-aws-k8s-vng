@@ -44,6 +44,11 @@ variable "preferred_spot_types" {
   default     = null
   description = "A list of instance types. Takes the preferred types into consideration while maintaining a variety of machine types running for optimized distribution."
 }
+variable "preferred_od_types" {
+  type        = list(string)
+  default     = null
+  description = "A list of instance types. Takes the preferred types into consideration while maintaining a variety of machine types running for optimized distribution."
+}
 variable "root_volume_size" {
   type        = number
   default     = 30
