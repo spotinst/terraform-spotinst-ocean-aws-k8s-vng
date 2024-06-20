@@ -69,6 +69,33 @@ variable "restrict_scale_down" {
   default     = null
   description = "When set to True, nodes will be treated as if all pods running have the restrict-scale-down label. Therefore, Ocean will not scale nodes down unless empty."
 }
+
+## instance_metadata_options ##
+# Ocean instance metadata options object for IMDSv2
+
+variable "http_tokens" {
+  type        = string
+  default     = null
+  description = "Determines if a signed token is required or not. Valid values: 'optional' or 'required'."
+
+  validation {
+    condition     = contains(["optional", "required"], var.http_tokens)
+    error_message = "Valid values: 'optional' or 'required'."
+  }
+}
+
+variable "http_put_response_hop_limit" {
+  type        = number
+  default     = null
+  description = "An integer from 1 through 64. The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further the instance metadata requests can travel."
+
+  validation {
+    condition     = var.http_put_response_hop_limit >= 1 && var.http_put_response_hop_limit <= 64
+    error_message = "Valid values: integer value between 1 and 64."
+  }
+}
+###################
+
 variable "labels" {
   type = list(object({
     key   = string
