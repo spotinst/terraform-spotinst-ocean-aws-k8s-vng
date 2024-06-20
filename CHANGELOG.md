@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.10.0"></a>
+## [v0.10.0] (June 20, 2024)
+
+- feat (ocean/aws): Added support for `preferred_od_types` ([#32](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/32))
+
+
 <a name="v0.9.0"></a>
 ## [v0.9.0] (March 29, 2024)
 
+- Correcting Repository URL in the changelog
 - feat: added support for `ephemeral_storage_device_name`. ([#30](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/30))
 - change-owner-request ([#29](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/29))
 
@@ -120,7 +127,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.9.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.10.0...HEAD
+[v0.10.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.9.0...v0.10.0
 [v0.9.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.8.0...v0.9.0
 [v0.8.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.7.0...v0.8.0
 [v0.7.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.6.0...v0.7.0
