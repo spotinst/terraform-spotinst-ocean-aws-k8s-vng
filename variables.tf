@@ -11,7 +11,7 @@ variable "name" {
 
 ## Optional VNG Configurations
 variable "user_data" {
-  type    = string
+  type    = any
   default = null
 }
 variable "image_id" {
