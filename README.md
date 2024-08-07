@@ -38,6 +38,7 @@ module "ocean-aws-k8s-vng_gpu" {
   
   #instance_types = ["g4dn.xlarge","g4dn.2xlarge"] # Limit VNG to specific instance types
   spot_percentage = 50 # Change the spot %
+  draining_timeout = 300 
 }
 
 ## Create Ocean Virtual Node Group (launchSpec) with instance_type_filters ##

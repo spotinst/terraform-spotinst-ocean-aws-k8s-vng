@@ -162,6 +162,12 @@ variable "spot_percentage" {
   default     = 100
   description = "Percentage of VNG that will run on EC2 Spot instances and remaining will run on-demand"
 }
+
+variable "draining_timeout" {
+  type        = number
+  default     = 300
+  description = "The configurable amount of time that Ocean will wait for the draining process to complete before terminating an instance."
+}
 ###################
 
 ## create_options ##

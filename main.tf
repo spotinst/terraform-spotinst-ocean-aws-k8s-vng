@@ -100,7 +100,8 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   }
 
   strategy {
-    spot_percentage = var.spot_percentage
+    spot_percentage  = var.spot_percentage
+    draining_timeout = var.draining_timeout
   }
 
   create_options {
