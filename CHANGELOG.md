@@ -2,11 +2,11 @@
 ## [Unreleased]
 
 
-
 <a name="v0.11.0"></a>
 ## [v0.11.0] (August 7, 2024)
 
 - added support for draining_timeout field ([#35](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/35))
+- feat: added instance_metadata_options block & variables ([#16](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/16))
 
 
 <a name="v0.10.0"></a>
