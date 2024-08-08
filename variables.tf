@@ -75,7 +75,7 @@ variable "restrict_scale_down" {
 
 variable "http_tokens" {
   type        = string
-  default     = null
+  default     = "optional"
   description = "Determines if a signed token is required or not. Valid values: 'optional' or 'required'."
 
   validation {
@@ -86,7 +86,7 @@ variable "http_tokens" {
 
 variable "http_put_response_hop_limit" {
   type        = number
-  default     = null
+  default     = 1
   description = "An integer from 1 through 64. The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further the instance metadata requests can travel."
 
   validation {
