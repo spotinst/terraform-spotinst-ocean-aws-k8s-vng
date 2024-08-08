@@ -2,11 +2,19 @@
 ## [Unreleased]
 
 
+
+<a name="v0.11.1"></a>
+## [v0.11.1] (August 8, 2024)
+
+- Updated default value to avoid creation failure ([#37](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/37))
+
+
 <a name="v0.11.0"></a>
 ## [v0.11.0] (August 7, 2024)
 
-- added support for draining_timeout field ([#35](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/35))
+- V0.11.0 Changelog ([#36](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/36))
 - feat: added instance_metadata_options block & variables ([#16](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/16))
+- added support for draining_timeout field ([#35](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/35))
 
 
 <a name="v0.10.0"></a>
@@ -134,7 +142,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.11.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.11.1...HEAD
+[v0.11.1]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.11.0...v0.11.1
 [v0.11.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.10.0...v0.11.0
 [v0.10.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.9.0...v0.10.0
 [v0.9.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.8.0...v0.9.0
