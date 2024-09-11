@@ -195,6 +195,18 @@ variable "draining_timeout" {
   default     = 300
   description = "The configurable amount of time that Ocean will wait for the draining process to complete before terminating an instance."
 }
+
+variable "utilize_commitments" {
+  type        = bool
+  default     = false
+  description = "When set as ‘true’, if savings plans commitments have available capacity, Ocean will utilize them alongside RIs (if exist) to maximize cost efficiency. If the value is set as 'null', it will automatically be inherited from the cluster level."
+}
+
+variable "utilize_reserved_instances" {
+  type        = bool
+  default     = true
+  description = "When set as ‘true’, if reserved instances exist, Ocean will utilize them before launching spot instances. If the value is set as 'null', it will automatically be inherited from the cluster level."
+}
 ###################
 
 ## create_options ##
