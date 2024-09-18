@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.13.0"></a>
+## [v0.13.0] (September 18, 2024)
+
+- Updated ocean controller v2 reference in README  ([#41](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/41))
+
+
 <a name="v0.12.0"></a>
 ## [v0.12.0] (September 16, 2024)
 
+- Changelog v0.12.0 ([#40](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/40))
 - Added support for `utilize_commitments` and `utilize_reserved_instances` under strategy in spotinst_ocean_aws_launch_spec. ([#39](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/39))
 
 
@@ -149,7 +156,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.12.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.13.0...HEAD
+[v0.13.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.12.0...v0.13.0
 [v0.12.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.11.1...v0.12.0
 [v0.11.1]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.11.0...v0.11.1
 [v0.11.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.10.0...v0.11.0
