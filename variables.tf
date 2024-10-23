@@ -268,6 +268,11 @@ variable "batch_size_percentage" {
   type        = number
   description = "Sets the percentage of the instances to deploy in each batch."
 }
+variable "respect_pdb" {
+  type        = bool
+  default     = null
+  description = "Default: false. During the roll, if the parameter is set to true we honor PDB during the instance replacement."
+}
 ##################
 
 ## instance_types_filters ##

@@ -148,6 +148,7 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     should_roll = var.should_roll
     roll_config {
       batch_size_percentage = var.batch_size_percentage
+      respect_pdb           = var.respect_pdb
     }
   }
 
