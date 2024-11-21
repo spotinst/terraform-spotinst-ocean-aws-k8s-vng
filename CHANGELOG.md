@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.15.0"></a>
+## [v0.15.0] (November 21, 2024)
+
+- added `reserved_enis` to support max pods configuration ([#45](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/45))
+
+
 <a name="v0.14.0"></a>
 ## [v0.14.0] (October 23, 2024)
 
+- Changelog 0.14.0 ([#44](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/44))
 - Added support for `respect_pdb` field under `roll_config`. ([#43](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/43))
 
 
@@ -163,7 +170,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.14.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.15.0...HEAD
+[v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.14.0...v0.15.0
 [v0.14.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.13.0...v0.14.0
 [v0.13.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.12.0...v0.13.0
 [v0.12.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.11.1...v0.12.0
