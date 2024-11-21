@@ -392,6 +392,6 @@ variable "ephemeral_storage_device_name" {
 
 variable "reserved_enis" {
   type        = number
-  default     = null
+  default     = 0
   description = "Specifies the count of ENIs to reserve per instance type for scaling purposes."
 }
