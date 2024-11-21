@@ -389,3 +389,9 @@ variable "ephemeral_storage_device_name" {
   description = "Specify an alternative device name from which ephemeral storage calculations should be derived. This parameter is used when the ephemeral storage should not utilize the root device. Provide the device name configured in the VNG's BDM or AMI's BDM that differs from the default root device."
 }
 ##################
+
+variable "reserved_enis" {
+  type        = number
+  default     = 0
+  description = "Specifies the count of ENIs to reserve per instance type for scaling purposes."
+}
