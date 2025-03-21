@@ -183,4 +183,9 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
       image_id   = images.value["image_id"]
     }
   }
+
+  instance_store_policy {
+    instance_store_policy_type = var.instance_store_policy_type
+  }
+
 }

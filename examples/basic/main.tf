@@ -39,4 +39,5 @@ module "ocean-aws-k8s-vng" {
   should_roll                                     = true
   batch_size_percentage                           = 50
   respect_pdb                                     = true
+  instance_store_policy_type                      = "RAID0"
 }
