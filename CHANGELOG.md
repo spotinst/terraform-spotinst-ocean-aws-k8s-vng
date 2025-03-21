@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.16.0"></a>
+## [v0.16.0] (March 21, 2025)
+
+- Added `instance_store_policy` object to support Ephemeral storage ([#47](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/47))
+
+
 <a name="v0.15.0"></a>
 ## [v0.15.0] (November 21, 2024)
 
+- changelog update ([#46](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/46))
 - added `reserved_enis` to support max pods configuration ([#45](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/45))
 
 
@@ -170,7 +177,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.15.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.16.0...HEAD
+[v0.16.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.14.0...v0.15.0
 [v0.14.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.13.0...v0.14.0
 [v0.13.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.12.0...v0.13.0
