@@ -63,22 +63,39 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     for_each = var.block_device_mappings
     content {
       device_name = block_device_mappings.value.device_name
-      no_device   = try(block_device_mappings.value.no_device,null)
-      ebs {
-        delete_on_termination = try(block_device_mappings.value.delete_on_termination,null)
-        encrypted             = try(block_device_mappings.value.encrypted,null)
-        iops                  = try(block_device_mappings.value.iops,null)
-        kms_key_id            = try(block_device_mappings.value.kms_key_id,null)
-        snapshot_id           = try(block_device_mappings.value.snapshot_id,null)
-        volume_type           = try(block_device_mappings.value.volume_type,null)
-        volume_size           = try(block_device_mappings.value.volume_size,null)
-        throughput            = try(block_device_mappings.value.throughput,null)
-        dynamic "dynamic_volume_size" {
-          for_each = var.dynamic_volume_size != null ? [var.dynamic_volume_size] : []
-          content {
-            base_size              = dynamic_volume_size.value.base_size
-            resource               = dynamic_volume_size.value.resource
-            size_per_resource_unit = dynamic_volume_size.value.size_per_resource_unit
+      no_device   = try(block_device_mappings.value.no_device, null)
+
+      dynamic "ebs" {
+        for_each = (
+          try(
+            block_device_mappings.value.delete_on_termination,
+            block_device_mappings.value.encrypted,
+            block_device_mappings.value.iops,
+            block_device_mappings.value.kms_key_id,
+            block_device_mappings.value.snapshot_id,
+            block_device_mappings.value.volume_type,
+            block_device_mappings.value.volume_size,
+            block_device_mappings.value.throughput,
+            null
+          ) != null ? [block_device_mappings.value] : []
+        )
+        content {
+          delete_on_termination = try(ebs.value.delete_on_termination, null)
+          encrypted             = try(ebs.value.encrypted, null)
+          iops                  = try(ebs.value.iops, null)
+          kms_key_id            = try(ebs.value.kms_key_id, null)
+          snapshot_id           = try(ebs.value.snapshot_id, null)
+          volume_type           = try(ebs.value.volume_type, null)
+          volume_size           = try(ebs.value.volume_size, null)
+          throughput            = try(ebs.value.throughput, null)
+
+          dynamic "dynamic_volume_size" {
+            for_each = var.dynamic_volume_size != null ? [var.dynamic_volume_size] : []
+            content {
+              base_size              = try(dynamic_volume_size.value.base_size, null)
+              resource               = try(dynamic_volume_size.value.resource, null)
+              size_per_resource_unit = try(dynamic_volume_size.value.size_per_resource_unit, null)
+            }
           }
         }
       }
