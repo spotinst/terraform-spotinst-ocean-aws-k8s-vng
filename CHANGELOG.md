@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.17.0"></a>
+## [v0.17.0] (April 23, 2025)
+
+- fixed `no_device` field to accept empty string ([#49](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/49))
+
+
 <a name="v0.16.0"></a>
 ## [v0.16.0] (March 21, 2025)
 
+- changelog v0.16.0 ([#48](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/48))
 - Added `instance_store_policy` object to support Ephemeral storage ([#47](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/47))
 
 
@@ -177,7 +184,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.16.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.17.0...HEAD
+[v0.17.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.16.0...v0.17.0
 [v0.16.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.14.0...v0.15.0
 [v0.14.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.13.0...v0.14.0
