@@ -205,4 +205,14 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     instance_store_policy_type = var.instance_store_policy_type
   }
 
+
+  dynamic "startup_taints" {
+    for_each = var.startup_taints == null ? [] : var.startup_taints
+    content {
+      key    = startup_taints.value["key"]
+      value  = startup_taints.value["value"]
+      effect = startup_taints.value["effect"]
+    }
+  }
+
 }
