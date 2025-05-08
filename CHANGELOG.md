@@ -3,9 +3,17 @@
 
 
 
-<a name="v0.17.0"></a>
-## [v0.17.0] (April 23, 2025)
+<a name="v0.18.0"></a>
+## [v0.18.0] (May 8, 2025)
 
+- added support for `startup_taints` object ([#53](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/53))
+- Change version constraints for spotinst/spotinst provider to allow both new patch and minor versions ([#52](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/52))
+
+
+<a name="v0.17.0"></a>
+## [v0.17.0] (April 24, 2025)
+
+- Changelog v0.17.0 ([#50](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/50))
 - fixed `no_device` field to accept empty string ([#49](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/49))
 
 
@@ -184,7 +192,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.17.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.18.0...HEAD
+[v0.18.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.17.0...v0.18.0
 [v0.17.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.16.0...v0.17.0
 [v0.16.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.14.0...v0.15.0
