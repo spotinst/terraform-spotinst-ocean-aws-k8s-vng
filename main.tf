@@ -127,6 +127,9 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     draining_timeout = var.draining_timeout
     utilize_commitments = var.utilize_commitments
     utilize_reserved_instances = var.utilize_reserved_instances
+    orientation {
+      availability_vs_cost = var.availability_vs_cost
+    }
   }
 
   create_options {

@@ -207,7 +207,12 @@ variable "utilize_reserved_instances" {
   default     = true
   description = "When set as ‘true’, if reserved instances exist, Ocean will utilize them before launching spot instances. If the value is set as 'null', it will automatically be inherited from the cluster level."
 }
-###################
+
+variable "availability_vs_cost" {
+  type        = string
+  default     = "balanced"
+  description = "Set this value to control the approach that Ocean takes while launching nodes. Valid values: `costOriented`, `balanced`, `cheapest`."
+}
 
 ## create_options ##
 variable "initial_nodes" {
