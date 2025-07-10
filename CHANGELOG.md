@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.19.0"></a>
+## [v0.19.0] (July 10, 2025)
+
+- added `orientation` for launching nodes ([#55](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/55))
+
+
 <a name="v0.18.0"></a>
 ## [v0.18.0] (May 8, 2025)
 
+- changelog v0.18.0 ([#54](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/54))
 - added support for `startup_taints` object ([#53](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/53))
 - Change version constraints for spotinst/spotinst provider to allow both new patch and minor versions ([#52](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/52))
 
@@ -192,7 +199,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.18.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.19.0...HEAD
+[v0.19.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.18.0...v0.19.0
 [v0.18.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.17.0...v0.18.0
 [v0.17.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.16.0...v0.17.0
 [v0.16.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.15.0...v0.16.0
