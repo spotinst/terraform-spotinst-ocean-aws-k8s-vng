@@ -417,3 +417,15 @@ variable "startup_taints" {
   default     = null
   description = "Temporary taints applied to a node during its initialization phase. For a startup taint to work, it must also be set as a regular taint in the userData for the VNG."
 }
+
+## Load Balancers ##
+variable "load_balancers" {
+  type = list(object({
+    arn  = optional(string, null)
+    name = optional(string, null)
+    type = string
+  }))
+  default     = null
+  description = "load_balancer object"
+}
+##########################

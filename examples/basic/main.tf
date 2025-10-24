@@ -40,4 +40,11 @@ module "ocean-aws-k8s-vng" {
   batch_size_percentage                           = 50
   respect_pdb                                     = true
   instance_store_policy_type                      = "RAID0"
+  load_balancers = [
+    {
+      arn               = "arn:aws:elasticloadbalancing:us-west-2:123456789:targetgroup/ALB-sandbox/af01fd9e94c06762",
+      name              = "Example1"
+      type              = "CLASSIC"
+    }
+  ]
 }

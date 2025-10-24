@@ -38,6 +38,15 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     }
   }
 
+  dynamic "load_balancers" {
+    for_each = var.load_balancers != null ? var.load_balancers : []
+    content {
+      arn  = load_balancers.value.arn
+      name = load_balancers.value.name
+      type = load_balancers.value.type
+    }
+  }
+
   dynamic "taints" {
     for_each = var.taints == null ? [] : var.taints
     content {
