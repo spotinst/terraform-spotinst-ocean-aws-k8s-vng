@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.20.0"></a>
+## [v0.20.0] (October 24, 2025)
+
+- Added support for load balancers object ([#56](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/56))
+
+
 <a name="v0.19.0"></a>
 ## [v0.19.0] (July 10, 2025)
 
+- Changelog update
 - added `orientation` for launching nodes ([#55](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/55))
 
 
@@ -199,7 +206,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.19.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.20.0...HEAD
+[v0.20.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.19.0...v0.20.0
 [v0.19.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.18.0...v0.19.0
 [v0.18.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.17.0...v0.18.0
 [v0.17.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.16.0...v0.17.0
