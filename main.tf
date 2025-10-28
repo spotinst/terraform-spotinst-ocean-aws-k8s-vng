@@ -119,6 +119,11 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     auto_headroom_percentage = var.auto_headroom_percentage
   }
 
+  autoscale_down {
+    max_scale_down_percentage        = var.max_scale_down_percentage
+    is_aggressive_scale_down_enabled = var.is_aggressive_scale_down_enabled
+  }
+
   autoscale_headrooms {
     cpu_per_unit    = var.cpu_per_unit
     memory_per_unit = var.memory_per_unit
