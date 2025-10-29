@@ -153,6 +153,22 @@ variable "num_of_units" {
   default     = 0
   description = "The number of units to retain as headroom, where each unit has the defined headroom CPU, memory and GPU."
 }
+
+## autoscale_down ##
+variable "max_scale_down_percentage" {
+  type        = number
+  default     = null
+  description = "Would represent the maximum % to scale-down. Number between 1-100."
+}
+
+## aggressive_scale_down
+variable "is_aggressive_scale_down_enabled" {
+  type        = bool
+  default     = false
+  description = "When set to 'true', the Aggressive Scale Down feature is enabled"
+}
+##################
+
 variable "cpu_per_unit" {
   type        = number
   default     = null
