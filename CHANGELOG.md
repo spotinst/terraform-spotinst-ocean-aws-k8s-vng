@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.21.0"></a>
+## [v0.21.0] (October 29, 2025)
+
+- Added support for Aggressive Scale Down Field ([#58](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/58))
+
+
 <a name="v0.20.0"></a>
 ## [v0.20.0] (October 24, 2025)
 
+- changelog ([#57](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/57))
 - Added support for load balancers object ([#56](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/56))
 
 
@@ -206,7 +213,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.20.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.21.0...HEAD
+[v0.21.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.20.0...v0.21.0
 [v0.20.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.19.0...v0.20.0
 [v0.19.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.18.0...v0.19.0
 [v0.18.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.17.0...v0.18.0
