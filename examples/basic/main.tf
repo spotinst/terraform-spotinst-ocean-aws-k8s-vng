@@ -47,4 +47,23 @@ module "ocean-aws-k8s-vng" {
       type              = "CLASSIC"
     }
   ]
+
+  max_scale_down_percentage        = 20.4
+  is_aggressive_scale_down_enabled = true
+
+  block_device_mappings = [{
+    device_name           = "/dev/xvdb"
+    delete_on_termination = "true"
+    encrypted             = "false"
+    volume_type           = "gp2"
+    volume_size           = 50
+    throughput            = 500
+
+  }]
+
+  dynamic_iops = {
+    base_size              = 50
+    resource               = "CPU"
+    size_per_resource_unit = 20
+  }
 }

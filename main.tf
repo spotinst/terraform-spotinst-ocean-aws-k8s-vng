@@ -106,6 +106,14 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
               size_per_resource_unit = try(dynamic_volume_size.value.size_per_resource_unit, null)
             }
           }
+          dynamic "dynamic_iops" {
+            for_each = var.dynamic_iops != null ? [var.dynamic_iops] : []
+            content {
+              base_size              = dynamic_iops.value.base_size
+              resource               = dynamic_iops.value.resource
+              size_per_resource_unit = dynamic_iops.value.size_per_resource_unit
+            }
+          }
         }
       }
     }
