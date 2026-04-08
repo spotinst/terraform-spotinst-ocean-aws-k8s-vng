@@ -66,4 +66,15 @@ module "ocean-aws-k8s-vng" {
     resource               = "CPU"
     size_per_resource_unit = 20
   }
+
+  optimization_windows = {
+    is_enabled = true
+    windows = [
+      {
+        cron_expression = "0 0 * * 1"
+        duration        = "5h"
+        effects         = ["ignorePdb", "ignoreRestrictScaleDown"]
+      }
+    ]
+  }
 }

@@ -288,6 +288,21 @@ variable "scheduling_shutdown_hours" {
 }
 ##################
 
+## optimization_windows ##
+variable "optimization_windows" {
+  type = object({
+    is_enabled = bool
+    windows = optional(list(object({
+      cron_expression = string
+      duration        = string
+      effects         = list(string)
+    })))
+  })
+  default     = null
+  description = "An object used to specify time windows during which certain optimization constraints can be eased."
+}
+##################
+
 ## update_policy ##
 variable "should_roll" {
   type        = bool
