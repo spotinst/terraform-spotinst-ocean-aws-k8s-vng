@@ -203,7 +203,6 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     }
   }
 
-
   update_policy {
     should_roll = var.should_roll
     roll_config {

@@ -77,4 +77,5 @@ module "ocean-aws-k8s-vng" {
       }
     ]
   }
+
 }
