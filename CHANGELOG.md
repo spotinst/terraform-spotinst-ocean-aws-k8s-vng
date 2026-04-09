@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.23.0"></a>
+## [v0.23.0] (April 9, 2026)
+
+- Sptaut 19489 terraform optimization window for unrestricted ocean operations for aws ([#61](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/61))
+
+
 <a name="v0.22.0"></a>
 ## [v0.22.0] (December 1, 2025)
 
+- changelog update
 - Added support for DynamicIOPS Field ([#60](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/60))
 
 
@@ -220,7 +227,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.22.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.23.0...HEAD
+[v0.23.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.22.0...v0.23.0
 [v0.22.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.21.0...v0.22.0
 [v0.21.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.20.0...v0.21.0
 [v0.20.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.19.0...v0.20.0
