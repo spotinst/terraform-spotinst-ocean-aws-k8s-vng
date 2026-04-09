@@ -187,6 +187,22 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     }
   }
 
+  dynamic "optimization_windows" {
+    for_each = var.optimization_windows != null ? [var.optimization_windows] : []
+    content {
+      is_enabled = optimization_windows.value.is_enabled
+
+      dynamic "windows" {
+        for_each = optimization_windows.value.windows != null ? optimization_windows.value.windows : []
+        content {
+          cron_expression = windows.value.cron_expression
+          duration        = windows.value.duration
+          effects         = windows.value.effects
+        }
+      }
+    }
+  }
+
   update_policy {
     should_roll = var.should_roll
     roll_config {
