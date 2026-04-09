@@ -80,9 +80,14 @@ module "ocean-aws-k8s-vng" {
     is_enabled = true
     windows = [
       {
-        cron_expression = "0 0 * * 1"
-        duration        = "5h"
-        effects         = ["ignorePdb", "ignoreRestrictScaleDown"]
+        cron_expression = "0 * * * 1"
+        duration        = "8d"
+        effects         = ["ignorePdb","ignoreRestrictScaleDown"]
+      },
+      {
+        cron_expression = "0 0 * * 3"
+        duration        = "6h"
+        effects         = ["ignoreRestrictScaleDown"]
       }
     ]
   }
