@@ -470,3 +470,14 @@ variable "load_balancers" {
   description = "load_balancer object"
 }
 ##########################
+
+## capacity_reservations ##
+variable "capacity_reservations" {
+  type = object({
+    fallback                  = optional(bool, true)
+    capacity_reservation_ids  = optional(list(string), null)
+  })
+  default     = null
+  description = "Capacity Reservations to be used for launching instances."
+}
+##########################

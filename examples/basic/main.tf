@@ -78,4 +78,9 @@ module "ocean-aws-k8s-vng" {
     ]
   }
 
+  capacity_reservations = {
+    fallback                 = true
+    capacity_reservation_ids = ["cr-1a2b3c4d", "cr-5e6f7g8h"]
+  }
+
 }

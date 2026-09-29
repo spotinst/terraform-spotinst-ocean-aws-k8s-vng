@@ -13,6 +13,14 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
   root_volume_size     = length(var.block_device_mappings) == 0 ? var.root_volume_size : null
   reserved_enis        = var.reserved_enis
 
+  dynamic "capacity_reservations" {
+    for_each = var.capacity_reservations != null ? [var.capacity_reservations] : []
+    content {
+      fallback                  = capacity_reservations.value.fallback
+      capacity_reservation_ids  = capacity_reservations.value.capacity_reservation_ids
+    }
+  }
+
   #Optional, tags will be inherited by the default launchspec configured in the ocean_aws resource
   dynamic "tags" {
     for_each = var.tags == null ? {} : var.tags
