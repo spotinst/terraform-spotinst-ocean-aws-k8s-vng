@@ -17,7 +17,7 @@ resource "spotinst_ocean_aws_launch_spec" "nodegroup" {
     for_each = var.capacity_reservations != null ? [var.capacity_reservations] : []
     content {
       fallback                  = capacity_reservations.value.fallback
-      capacity_reservation_ids  = capacity_reservations.value.capacity_reservation_ids
+      ids  = capacity_reservations.value.ids
     }
   }
 

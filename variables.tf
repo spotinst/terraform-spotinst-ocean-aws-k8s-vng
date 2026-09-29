@@ -475,7 +475,7 @@ variable "load_balancers" {
 variable "capacity_reservations" {
   type = object({
     fallback                  = optional(bool, true)
-    capacity_reservation_ids  = optional(list(string), null)
+    ids  = optional(list(string), null)
   })
   default     = null
   description = "Capacity Reservations to be used for launching instances."
