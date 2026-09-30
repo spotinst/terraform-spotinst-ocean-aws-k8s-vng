@@ -478,6 +478,6 @@ variable "capacity_reservations" {
     ids  = optional(list(string), null)
   })
   default     = null
-  description = "Capacity Reservations to be used for launching instances."
+  description = "Configuration for targeting AWS Capacity Reservations."
 }
 ##########################
