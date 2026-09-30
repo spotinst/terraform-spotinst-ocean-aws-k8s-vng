@@ -474,7 +474,7 @@ variable "load_balancers" {
 ## capacity_reservations ##
 variable "capacity_reservations" {
   type = object({
-    fallback                  = optional(bool, true)
+    fallback                  = optional(bool, false)
     ids  = optional(list(string), null)
   })
   default     = null
