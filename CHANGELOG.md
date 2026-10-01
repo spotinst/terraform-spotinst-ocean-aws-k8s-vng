@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.24.0"></a>
+## [v0.24.0] (October 1, 2026)
+
+- feat(AWS | VNG): Added support for CapacityReservations field. ([#63](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/63))
+
+
 <a name="v0.23.0"></a>
 ## [v0.23.0] (April 9, 2026)
 
+- changelog ([#62](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/62))
 - Sptaut 19489 terraform optimization window for unrestricted ocean operations for aws ([#61](https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/issues/61))
 
 
@@ -227,7 +234,8 @@ and numerous whitespace changes.
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.23.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.24.0...HEAD
+[v0.24.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.23.0...v0.24.0
 [v0.23.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.22.0...v0.23.0
 [v0.22.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.21.0...v0.22.0
 [v0.21.0]: https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s-vng/compare/v0.20.0...v0.21.0
